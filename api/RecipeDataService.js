@@ -1,5 +1,5 @@
 //DO NOT PUBLISH ANYTHING WITH EXPOSED API TOKEN IN FRONTEND
-const API_TOKEN = undefined /* ADD YOUR OWN API TOKEN HERE FOR THE SPOONACULAR API */
+const API_TOKEN = '' /* ADD YOUR OWN API TOKEN HERE FOR THE SPOONACULAR API */
 const BASE_URL = 'https://api.spoonacular.com/recipes/findByIngredients';
 
 class RecipeDataService {

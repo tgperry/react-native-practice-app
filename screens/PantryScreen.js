@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Text, SafeAreaView, View, TextInput, Button } from 'react-native';
+import { Text, View, TextInput, Button, StyleSheet } from 'react-native';
 import { useDispatch } from 'react-redux';
 
 import ListIngredients from '../components/ListIngredients';
@@ -57,5 +57,9 @@ function PantryScreen(props) {
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+
+});
 
 export default PantryScreen;
