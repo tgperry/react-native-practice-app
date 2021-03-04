@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Text, View, TextInput, StyleSheet } from 'react-native';
+import { Text, View, TextInput, StyleSheet, KeyboardAvoidingView } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useDispatch } from 'react-redux';
 
@@ -23,7 +23,7 @@ function InputForm() {
     }
 
     return (
-        <View style={styles.centeredView}>
+        <KeyboardAvoidingView behavior="padding" style={styles.centeredView}>
             <Text style={styles.header}>
                 Add Ingredients
             </Text>
@@ -44,7 +44,7 @@ function InputForm() {
                     Add
                 </Text>
             </TouchableOpacity>
-        </View>
+        </KeyboardAvoidingView>
     );
 }
 
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     textInput: {
-        height: 30, 
+        height: '18%', 
         backgroundColor: 'white', 
         width: '80%', 
         borderRadius: 20, 

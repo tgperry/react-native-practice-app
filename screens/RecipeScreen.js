@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { View, Text, Button, Image, Modal, Pressable, StyleSheet, RefreshControl } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import { useSelector } from 'react-redux';
 
 import RecipeDataService from '../api/RecipeDataService';
@@ -43,7 +43,9 @@ const RecipeScreen = () => {
                 <Text style={styles.itemViewHeader}>
                     {item.title}
                 </Text>
-                <Image source={{uri: item.image}} style={styles.itemViewImage}/>
+                <TouchableOpacity onPress={()=>activateModal(item)}>
+                    <Image source={{uri: item.image}} style={styles.itemViewImage}/>
+                </TouchableOpacity>
                 <Pressable>
                     <Text style={styles.itemViewShowIngrText} onPress={()=>activateModal(item)}>
                         Show All Ingredients

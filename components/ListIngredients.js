@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, StyleSheet } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteIngredients } from '../store/slices/IngredientSlice';
 
 
-const ListIngredients = ({props}) => {
+const ListIngredients = () => {
     const ingredients = useSelector(state => state.ingredientsSlice.ingredients);
     const dispatch = useDispatch();
 
@@ -15,8 +15,8 @@ const ListIngredients = ({props}) => {
 
     const ItemView = (item, key) => {
         return (
-            <View key={key} style={{flexDirection: 'row', backgroundColor: 'lightgray', marginBottom: '5%'}}>
-                <Text style={{fontSize: 20, width: '80%', paddingLeft: '5%', paddingTop: '2%'}}>
+            <View key={key} style={styles.itemView}>
+                <Text style={styles.textStyle}>
                     {item.quantity} {item.name}
                 </Text>
                 <Button
@@ -36,5 +36,19 @@ const ListIngredients = ({props}) => {
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    itemView: {
+        flexDirection: 'row', 
+        backgroundColor: 'lightgray', 
+        marginBottom: '5%'
+    },
+    textStyle: {
+        fontSize: 20, 
+        width: '80%', 
+        paddingLeft: '5%', 
+        paddingTop: '2%'
+    }
+});
 
 export default ListIngredients;
