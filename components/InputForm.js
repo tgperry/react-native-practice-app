@@ -11,6 +11,14 @@ function InputForm() {
     const dispatch = useDispatch();
 
     const onSubmit = () => {
+        if (!name) {
+            alert('Please add an ingredient name')
+            return
+        }
+        if (!quantity) {
+            setQuantity('1')
+        }
+
         const ingredient = {
             name: name,
             quantity: quantity
@@ -51,22 +59,23 @@ function InputForm() {
 const styles = StyleSheet.create({
     centeredView: {
         flex: 1, 
-        backgroundColor: 'lightgray', 
         width: '100%', 
         justifyContent: 'center', 
         alignItems: 'center'
     },
     header: {
-        color: 'white', 
+        color: 'black', 
         paddingBottom: '1%', 
         fontSize: 18, 
         fontWeight: 'bold'
     },
     textInput: {
-        height: '18%', 
+        height: 25, 
         backgroundColor: 'white', 
         width: '80%', 
-        borderRadius: 20, 
+        borderRadius: 20,
+        borderWidth: 1,
+        borderColor: 'black', 
         textAlign: 'center', 
         marginVertical: '1%'
     },  

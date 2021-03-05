@@ -1,10 +1,12 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, KeyboardAvoidingView, Platform } from 'react-native';
 
 import ListIngredients from '../components/ListIngredients';
 import InputForm from '../components/InputForm';
 
 function PantryScreen() {
+    const keyboardVerticalOffset = Platform.OS === 'ios' ? 30 : 0
+    
     return (
         <View style={styles.centeredView}>
             <View style={styles.header}>
@@ -15,9 +17,9 @@ function PantryScreen() {
             <View style={{ flex: 6, width: '100%'}}>
                 <ListIngredients/>
             </View>
-            <View style={{ flex: 2, width: '100%'}}>
+            <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={{ flex: 2, width: '100%'}} keyboardVerticalOffset={keyboardVerticalOffset}>
                 <InputForm/>
-            </View>
+            </KeyboardAvoidingView>
         </View>
     );
 }
