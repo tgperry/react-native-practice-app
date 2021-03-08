@@ -9,12 +9,16 @@ export const ingredientsSlice = createSlice({
     initialState: {
         ingredients: [
             {
-                name: 'tomatoes',
-                quantity: 5
+                name: 'Tomatoes',
+                quantity: '5'
             },
             {
-                name: 'potatoes',
-                quantity: 10
+                name: 'Chicken',
+                quantity: '1'
+            },
+            {
+                name: 'Limes',
+                quantity: '3'
             }
         ]
     },
